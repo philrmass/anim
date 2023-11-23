@@ -1,0 +1,22 @@
+{
+  "name": "anim",
+  "short_name": "anim",
+  "start_url": "/anim/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#fff",
+  "theme_color": "#673ab8",
+  "icons": [
+    {
+      "src": "./assets/icon.png",
+      "type": "image/png",
+      "purpose": "maskable",
+      "sizes": "512x512"
+    },
+    {
+      "src": "./assets/icon.png"
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
+}
