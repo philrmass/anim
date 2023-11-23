@@ -1,0 +1,13 @@
+.display {
+  position: relative;
+  aspect-ratio: 1;
+  background: #eee;
+}
+
+.dot {
+  position: absolute;
+  background: #F00;
+  border-radius: 50%;
+  width: 10vw;
+  aspect-ratio: 1;
+}
