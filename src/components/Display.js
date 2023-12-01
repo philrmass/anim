@@ -3,12 +3,24 @@ import { useVisibility } from 'utilities/hooks';
 import styles from './Display.module.css';
 
 export default function Display() {
-  const [x, _setX] = useState(10);
-  const [y, _setY] = useState(30);
+  const [x, setX] = useState(10);
+  const [y, setY] = useState(30);
   const isVisible = useVisibility();
 
   useEffect(() => {
-    console.log('VIS', isVisible);
+    let id;
+
+    const render = () => {
+      setX((x) => x > 120 ? 0 : x + 0.1);
+      setY((y) => y > 120 ? 0 : y + 0.1);
+
+      id = requestAnimationFrame(render);
+    };
+
+    if (isVisible) {
+      id = requestAnimationFrame(render);
+    }
+    return () => cancelAnimationFrame(id);
   }, [isVisible]);
 
   const dotStyle = { left: `${x}%`, bottom: `${y}%` };
